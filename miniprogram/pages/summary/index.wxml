@@ -1,0 +1,24 @@
+<view class="header">
+  <view class="title">{{goalTitle}}</view>
+  <view class="subtitle">current record's statistics</view>
+</view>
+
+<view class="info-container">
+  <view class="date-container begin">
+    <view class="time">{{beginTime}}</view>
+    <view class="date">{{beginDate}}</view>
+    <view class="date-desc">start time</view>
+  </view>
+  <view class="duration-container">
+    <view class="duration">{{durationStr}}</view>
+    <view class="line"></view>
+  </view>
+  <view class="date-container end">
+    <view class="time">{{endTime}}</view>
+    <view class="date">{{endDate}}</view>
+    <view class="date-desc">end time</view>
+  </view>
+</view>
+<view class="subtitle">Anything to say?</view>
+<textarea name="textarea" bindinput="onSummaryInput" maxlength="140" />
+<view class="button" bind:tap="onSubmit">save</view>

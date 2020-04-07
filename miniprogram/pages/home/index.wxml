@@ -1,0 +1,67 @@
+<view class="{{isCreating ? 'blur-bg' : ''}}">
+
+    <!-- 用户信息 -->
+    <view class='user-info-container'>
+        <image class="avatar" src="{{userInfo.avatarUrl}}" mode="aspectFit"></image>
+        <view class="info">
+            <view class="name" wx:if="{{userInfo}}">{{userInfo.nickName}}, </view>
+            <button class="authorize" open-type="getUserInfo" bindgetuserinfo="onAuthorize" wx:else>
+                Authorized to login
+            </button>
+            <view class="statistics">Total accumulated time: {{wholeTime}}</view>
+        </view>
+    </view>
+
+
+
+    <!-- 饼状图 -->
+    <view class="pie-container">
+        <image class="empty-img" wx:if="{{goalList.length === 0 || !goalList}}" mode="aspectFit" src="../../images/home/empty.png" bind:tap="onCreateGoal" />
+        <view class="pie" hidden="{{isCreating}}">
+            <ec-canvas ec="{{pieOpt}}" id="chart"></ec-canvas>
+        </view>
+    </view>
+
+    <!-- 当前记录提示 -->
+    <view class="timer-tips" wx:if="{{timerState}}" bindtap="onJumpToTimerPage">
+        <view class="timer-detail">
+            current
+            <view class="timer-goal-title">{{timerGoalTitle}}</view>
+            {{timerState}}
+            <view class="check-timer">look</view>
+        </view>
+        <view class="timer">{{timer}}</view>
+    </view>
+
+    <!-- 目标信息 -->
+    <view class="project-container" wx:if="{{goalList.length}}">
+        <view class="count">
+            You have
+            <view class="num">{{goalList.length}}</view>
+            goal{{goalList.length > 1 ? 's':''}}
+        </view>
+        <view>
+            <view class="project" wx:for="{{goalList}}" wx:key="_id" bindtap="onGoalClick" data-goal-id="{{item._id}}">
+                <view class="title">{{item.title}}</view>
+                <view class="tags"> 
+                    <m-tag>total：{{item.duration}}</m-tag>
+                    <m-tag wx:if="{{item.lastUpdate}}">last record：{{item.lastUpdate}}</m-tag>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <!-- 提示信息: 如果没有数据，则显示提示信息。1)goalList === null loading... 2)goalList === [] -->
+    <view class="loading" wx:elif="{{!goalList}}">
+        <m-loading />
+    </view>
+    <m-tips warn="You haven't created a goal." tips="Click “+” to start！ " wx:else></m-tips>
+
+    <!-- 创建按钮 -->
+    <image class="create" src="../../images/home/create.png" bindtap="onCreateGoal"></image>
+
+</view>
+
+<m-modal title="What's your new goal? " wx:if="{{isCreating}}" inputPlaceholder="for example: read 《csapp》" bind:cancel="onCancelCreate" bind:confirm="onAddGoal" />
+
+

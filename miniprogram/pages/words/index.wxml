@@ -1,0 +1,20 @@
+<m-music musicImg="/images/words/daojiangxing.jpg" musicTitle="盗将行" musicUrl="https://m701.music.126.net/20200107163953/bb8ef9b98872224113f4e27f4ed3ac89/jdyyaac/0509/5653/560e/2c21b00f9aa9c49f78b2ad95d7eb9e5f.m4a" bind:musicOn="onMusicOn" bind:musicOff="onMusicOff" bind:mytap="onMytap" />
+
+<view class="content">
+        <!-- 头像 -->
+        <view class="author-date"> 
+            <image src="/images/words/avatar.jpg" class="author"></image>
+            <text class="date">2020年1月7日</text>
+        </view>
+        <!-- 标题内容 -->
+         <view class="title">迟来的生日祝福</view>
+         
+         <view><text decode='true' class="article-content">&nbsp;&nbsp;终于来到非代码阶段了...真是抱歉啊，这个生日礼物来得有点晚。这个其实是github上的一个开源项目，原coder写得太牛逼了，几乎没有bug，我也就是重写了一遍，稍作了修改。不过说真的，还挺费事的...我使用的是腾讯的云功能，数据库、服务器都是免费的，不过资源够用，够你写一辈子了，哈哈，如果你看得上的话，反正我可以一直挂着，当然一直是体验版，你专属的~</text></view>
+        
+         <view><text decode='true' class="article-content">&nbsp;&nbsp;还是扯些和标题有关的话吧~你的话，首先当然是希望你能够更加关心自己的身体健康...记得你有次在微信上叫我什么来着？反正大概说的老是像个家长一样管你...是吧。虽然不愿承认，但确实有点啰嗦了啊。不过，还是希望你多多注意啊~另外，祝愿未来的你以更加积极乐观的态度去面对生活，一直快乐。日后的生活，喜则喜，悲也能苦中作乐。永远爱苏东坡~</text></view>
+
+         <view><text decode='true' class="article-content">&nbsp;&nbsp;时间过得太快了啊，说考研，考研已经结束，说毕业，毕业即将到来。马上又是一个农历新年啦~不多说了，未来未可知。新年快乐、生日快乐！</text></view>
+
+         <image class="image" src="/images/words/deepestBlue.jpg"></image>
+
+</view>

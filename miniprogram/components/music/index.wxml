@@ -1,0 +1,5 @@
+<view>
+    <view class='music {{on? "on": ""}}'>
+        <image src="{{musicImg}}" style='width: 60rpx; height: 60rpx; border-radius: 50%;' bindtap='onClick'></image>
+    </view>
+</view>
